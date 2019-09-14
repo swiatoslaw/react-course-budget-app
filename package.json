@@ -4,12 +4,11 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "serve": "live-server public/",
     "build:dev": "webpack",
     "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
     "test": "jest --config=jest.config.js",
-    "start":  "node server/server.js",
+    "start": "node server/server.js",
     "heroku-postbuild": "npm run build:prod"
   },
   "author": "",
@@ -25,7 +24,6 @@
     "react-modal": "^3.10.1",
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.0.1",
-    "react-test-renderer": "^16.9.0",
     "redux": "^4.0.4",
     "uuid": "^3.3.3"
   },
@@ -48,6 +46,7 @@
     "normalize.css": "^8.0.1",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
+    "react-test-renderer": "^16.9.0",
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.7",
     "webpack-dev-server": "^3.8.0"
