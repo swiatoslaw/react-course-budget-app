@@ -4,14 +4,14 @@ import { EditExpensePage } from "../../components/EditExpensePage";
 import ExpenseForm from "../../components/ExpenseForm";
 import expenses from "../fixtures/expenses";
 
-let editExpense, startRemoveExpense, history, wrapper;
+let startEditExpense, startRemoveExpense, history, wrapper;
 
 beforeEach(() => {
-    editExpense = jest.fn();
+    startEditExpense = jest.fn();
     startRemoveExpense = jest.fn();
     history = {push: jest.fn()};
     wrapper = shallow(<EditExpensePage
-            editExpense={editExpense}
+            startEditExpense={startEditExpense}
             startRemoveExpense={startRemoveExpense}
             history={history}
             expense={expenses[2]}
@@ -26,7 +26,7 @@ test("should render EditExpensePage correctly", () => {
 test("should handle onSubmit", () => {
     wrapper.find(ExpenseForm).prop("onSubmit")(expenses[2]);
     expect(history.push).toHaveBeenCalledWith("/");
-    expect(editExpense).toHaveBeenCalledWith(expenses[2].id, expenses[2]);
+    expect(startEditExpense).toHaveBeenCalledWith(expenses[2].id, expenses[2]);
 });
 
 test("should handle onClick", () => {
