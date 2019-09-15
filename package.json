@@ -7,7 +7,7 @@
     "build:dev": "webpack",
     "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
-    "test": "jest --config=jest.config.js",
+    "test": "cross-env NODE_ENV=test jest --config=jest.config.js",
     "start": "node server/server.js",
     "heroku-postbuild": "npm run build:prod"
   },
@@ -15,6 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "firebase": "^6.6.1",
     "moment": "^2.24.0",
     "numeral": "^2.0.6",
     "raf": "^3.4.1",
@@ -26,6 +27,7 @@
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.0.1",
     "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0",
     "uuid": "^3.3.3"
   },
   "devDependencies": {
@@ -36,7 +38,9 @@
     "@babel/preset-react": "^7.0.0",
     "@types/jest": "^24.0.18",
     "babel-loader": "^8.0.6",
+    "cross-env": "^5.2.1",
     "css-loader": "^3.2.0",
+    "dotenv": "^8.1.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "enzyme-to-json": "^3.4.0",
@@ -45,9 +49,10 @@
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",
     "normalize.css": "^8.0.1",
+    "react-test-renderer": "^16.9.0",
+    "redux-mock-store": "^1.5.3",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
-    "react-test-renderer": "^16.9.0",
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.7",
     "webpack-dev-server": "^3.8.0"
