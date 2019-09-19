@@ -13,6 +13,8 @@ import {
 import expenses from "../fixtures/expenses";
 import database from "../../firebase/firebase";
 
+jest.setTimeout(30000);
+
 const createMockStore = configureMockStore([thunk]);
 
 beforeEach((done) => {
